@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="5dp">
 
     <TextView
@@ -21,10 +21,26 @@
         android:textSize="18sp"/>
 
     <LinearLayout
+        android:id="@+id/source_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@id/news_body_text">
+
+        <TextView
+            android:id="@+id/source_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/source_text"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/source_name_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="@string/source_name_text"
+            android:textSize="16sp"/>
 
         <TextView
             android:id="@+id/writer_text"
@@ -35,11 +51,18 @@
 
         <TextView
             android:id="@+id/writer_name_text"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="@string/writer_name_text"
             android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/source_layout"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/date_text"
@@ -50,11 +73,25 @@
 
         <TextView
             android:id="@+id/date_details_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="@string/date_details_text"
             android:textSize="16sp"/>
 
+        <TextView
+            android:id="@+id/time_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/time_text"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/time_details_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/time_details_text"
+            android:textSize="16sp"/>
     </LinearLayout>
 
 </RelativeLayout>

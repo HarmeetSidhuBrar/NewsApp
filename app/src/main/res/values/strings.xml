@@ -8,5 +8,13 @@
     <string name="date_details_text">20/06/19</string>
     <string name="writer_text">Writer:  </string>
     <string name="writer_name_text">Aman Dubey</string>
-
+    <string name="source_text">Source :- </string>
+    <string name="source_name_text">BBC</string>
+    <string name="time_text">Time:- </string>
+    <string name="time_details_text">13:40</string>
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">News Settings</string>
+    <string name="settings_country_label">Country</string>
+    <string name="settings_country_key" translatable="false">country</string>
+    <string name="settings_country_default" translatable="false">in</string>
 </resources>
