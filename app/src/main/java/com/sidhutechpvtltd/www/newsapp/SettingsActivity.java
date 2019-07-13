@@ -25,13 +25,20 @@ public class SettingsActivity extends AppCompatActivity {
 
             Preference countryName = findPreference(getString(R.string.settings_country_key));
             bindPreferenceSummaryToValue(countryName);
+
+            Preference categoryName = findPreference(getString(R.string.settings_category_key));
+            bindPreferenceSummaryToValue(categoryName);
+
+            Preference pageSize = findPreference(getString(R.string.settings_page_size_key));
+            bindPreferenceSummaryToValue(pageSize);
+
         }
 
         @Override
         public boolean onPreferenceChange(Preference preference, Object value) {
             // The code in this method takes care of updating the displayed preference summary after it has been changed
             String stringValue = value.toString();
-            preference.setSummary(stringValue);
+           preference.setSummary(stringValue);
 
             return true;
         }

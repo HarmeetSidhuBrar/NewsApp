@@ -17,4 +17,13 @@
     <string name="settings_country_label">Country</string>
     <string name="settings_country_key" translatable="false">country</string>
     <string name="settings_country_default" translatable="false">in</string>
+
+    <string name="settings_category_label">Category</string>
+    <string name="settings_category_key" translatable="false">category</string>
+    <string name="settings_category_default" translatable="false">general</string>
+
+    <string name="settings_page_size_label">Page Size</string>
+    <string name="settings_page_size_key" translatable="false">page_size</string>
+    <string name="settings_page_size_default" translatable="false">15</string>
+
 </resources>

@@ -19,7 +19,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +26,6 @@ public class MainActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<List<NewsStory>> {
 
     public static final String LOG_TAG = MainActivity.class.getName();
-
 
     /**
      * URL for news data from the NewsApi.org dataset
@@ -122,6 +120,8 @@ public class MainActivity extends AppCompatActivity
 
         // getString retrieves a String value from the preferences. The second parameter is the default value for this preference.
         String countryName = sharedPreferences.getString(getString(R.string.settings_country_key),getString(R.string.settings_country_default));
+        String categoryName = sharedPreferences.getString(getString(R.string.settings_category_key),getString(R.string.settings_category_default));
+        String pageSize = sharedPreferences.getString(getString(R.string.settings_page_size_key),getString(R.string.settings_page_size_default));
 
         // parse breaks apart the URI string that's passed into its parameter
         Uri baseUri = Uri.parse(NEWS_REQUEST_URL);
@@ -130,14 +130,14 @@ public class MainActivity extends AppCompatActivity
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         // Append query parameter and its value. For example, the `country=in`
-        uriBuilder.appendQueryParameter("country","in");
-
+        uriBuilder.appendQueryParameter("country",countryName);
+        uriBuilder.appendQueryParameter("category",categoryName);
+        uriBuilder.appendQueryParameter("pageSize",pageSize);
 
         // Return the completed uri `https://newsapi.org/v2/top-headlines?country=in`
         return new NewsLoader(this, uriBuilder.toString());
 
     }
-
 
     @Override
     public void onLoadFinished(Loader<List<NewsStory>> loader, List<NewsStory> news) {
